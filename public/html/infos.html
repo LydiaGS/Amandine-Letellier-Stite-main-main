@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Tetris Game">
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/infos.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <!--Navbar Responsive-->
+        <section id="nav">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check"><i class="fa fa-bars" id="btn"></i>
+                    <i class="fa fa-times" id="cancel"></i>
+                </label>
+                <img src="../image/logo.amandine.png" alt="" style="width: 65px; height: 65px">
+                <ul>
+                    <li><a href="../../index.html">Accueill</a></li>
+                    <li><a href="../html/intro.html">Introduction</a></li>
+                    <li><a href="../html/Compétence.html">Qui suis-je</a></li>
+                    <li><a href="../html/infos.html">Petit Jeux</a></li>
+                    <li><a href="../html/img.html">Mon Cours</a></li>
+                    <li><a href="../html/contact.html">Contacte</a></li>
+                </ul>
+            </nav>
+        </section>
+        <br /><br /><br /><br />
+        <!-- fin de la Navbar Responsive-->
+        <div class="about">
+        <br /><br /><br /><br />
+          <h2>Mon Tétris</h2>
+
+    <img id="demo-img" src="http://tetris.planetcode.fr/TetrisDemo.png" alt="Demo" title="Demo">
+
+    <div class="barrejeux">
+        
+        <button id="start_game"><i class="far fa-play-circle"></i></button>
+
+        <button id="restart_game"><i class="far fa-play-circle"></i></button>
+
+        <audio id="myAudio" src="TetrisRagtime.mp3" preload="auto">
+        </audio>
+
+        <!--<audio controls autoplay style="outline-style: none; width:250px;position:fixed;right:0;bottom:0;z-index=1000;">
+        <source src="TetrisRagtime.mp3" type="audio/mpeg">
+        </audio>-->
+
+        <button id="music_game" onClick="togglePlay()"><i class="fas fa-music"></i></button>
+
+        <button id="pause_game"><i class="far fa-pause-circle"></i></button>
+
+        <button id="continue_game"><i class='fas fa-redo'></i></button>
+
+        <div class="dropdown">
+            <button id="gamepad_controls" class="dropdown"><i class="fas fa-gamepad"></i></button>
+            <div class="dropdown-content">
+                <p style="margin-top:px;"><i class="fas fa-caret-right"></i>&nbsp;&nbsp;Move Right</p>
+                <p><i class="fas fa-caret-left"></i>&nbsp;&nbsp;Move Left</p>
+                <p><i class="fas fa-caret-down"></i>&nbsp;&nbsp;Move Down</p>
+                <p> <span style="font-weight:bold;">&nbsp;Ctrl</span> = Rotate</p>      
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="gamepad">
+        <div class="controls_1">
+            <button id="arrow-right"><i class="fas fa-caret-right"></i></button>
+            <button id="arrow-left"><i class="fas fa-caret-left"></i></button>
+        </div>
+
+        <div class="controls_2">
+            <button id="arrow-down"><i class="fas fa-caret-down"></i></button>
+            <button id="rotate_piece"><i class="fas fa-cubes"></i></button>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <div id="score"></div>
+    <p id="levels"></p>
+    
+    <canvas id="tetris" width="240" height="400"></canvas>
+    </div>
+        <br /><br />
+        <!-- fin de la Navbar Responsive-->
+        <br /><br /><br /><br />
+        <section class="footer">
+            <br />
+            <div class="icone-footer">
+                <h2>Mes services Indispensables </h2>
+                <br />
+                <div class="icon-textes">
+                    <a href="https://lydiags.github.io/coursHTmLCSSUpadate1/"><i class="fa fa-code" aria-hidden="true">
+                            <p>dévloppement web</p>
+                        </i>
+                    </a>
+
+                    <i class="fa fa-picture-o" aria-hidden="true">
+                        <p>Design responsive</p>
+                    </i>
+                    </a>
+
+
+                    <a href="https://lydiags.github.io/todo-list/"><i class="fa fa-file-code-o" aria-hidden="true">
+                            <p>Application mobile</p>
+                        </i>
+                    </a>
+
+                    <a href="https://lydiags.github.io/site-web-amandine/"><i class="fa fa-plus" aria-hidden="true">
+                            <p>et bien plus encore</p>
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="fond_div">
+        </div>
+        <section class="copyright">
+            <br>
+            <div class="Footer2">
+                <div class="logo">
+                    <img src="../image/logo.amandine.png" alt="" style="height:95px; width: 95px;">
+                </div>
+                <div class="img_qrcode">
+                    <img class="qrcode" src="../image/frame (2).png" alt="" title=""
+                        style="height: 100px; width: 85px;" />
+                </div>
+            </div>
+            <div class="contact_us">
+                <h4>Contact Us</h4>
+                <div class="ContactUs">
+                    <a href="https://github.com/LydiaGS"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/sardinedessine/"><i class="fa fa-instagram"
+                            aria-hidden="true"></i></a>
+                    <a href="https://discord.com/channels/1102875085880180808/1102875085880180810"><i
+                            class="fa fa-id-badge" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <br />
+            <div class="CopyAmandine">
+                <p>copyright &copy; amandine letellier</p>
+            </div>
+            <br />
+        </section>
+        <script src="../javascripte/index.js"></script>
+    </body>
+
+</html>
